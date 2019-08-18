@@ -47,7 +47,7 @@ public class PurchaseAdapter extends BaseAdapter {
         TextView price = itemView.findViewById(R.id.purchase_price);
         Purchase purchase = purchases.get(i);
         name.setText(purchase.getPurchaseName());
-//        price.setText(purchase.getPrice());
+        price.setText(Integer.toString(purchase.getPrice()));
         return itemView;
     }
 }
