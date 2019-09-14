@@ -10,13 +10,16 @@ import android.widget.ListView;
 import com.splitit.R;
 import com.splitit.domain.Purchase;
 import com.splitit.domain.PurchaseAdapter;
+import com.splitit.persistence.PurchaseList;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private ListView listView;
-    private ArrayList<Purchase> purchases = new ArrayList<>();
+    PurchaseList purchaseList = new PurchaseList();
+    private List<Purchase> purchases = new ArrayList<>();
     private PurchaseAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,13 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void populateListView() {
         listView =  findViewById(R.id.nameList);
-        purchases.add(new Purchase(1,"Veggi", 34, new Date()));
-        purchases.add(new Purchase(2,"meat", 34, new Date()));
-        purchases.add(new Purchase(3,"rice", 34, new Date()));
-        purchases.add(new Purchase(4,"chicken", 34, new Date()));
-        purchases.add(new Purchase(5,"duck", 34, new Date()));
-        purchases.add(new Purchase(6,"eto", 34, new Date()));
-        purchases.add(new Purchase(7,"beef", 34, new Date()));
+        purchases = purchaseList.getPurchaseList();
         adapter = new PurchaseAdapter(this, purchases);
         listView.setAdapter(adapter);
 //        ArrayAdapter arrayAdapter = new ArrayAdapter(this,);

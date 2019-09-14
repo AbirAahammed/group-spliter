@@ -34,5 +34,5 @@
         android:layout_alignBottom="@id/imageView"
         android:layout_alignStart="@id/name"
         />
- 
+
 </RelativeLayout>

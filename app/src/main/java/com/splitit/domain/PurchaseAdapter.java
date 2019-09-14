@@ -11,14 +11,15 @@ import android.widget.TextView;
 import com.splitit.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class PurchaseAdapter extends BaseAdapter {
 
     Activity context;
-    ArrayList <Purchase> purchases;
+    List <Purchase> purchases;
     private static LayoutInflater inflater = null;
 
-    public PurchaseAdapter(Activity context, ArrayList<Purchase> purchases){
+    public PurchaseAdapter(Activity context, List<Purchase> purchases){
         this.context = context;
         this.purchases = purchases;
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
