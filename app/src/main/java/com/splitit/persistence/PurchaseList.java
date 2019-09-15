@@ -1,5 +1,7 @@
 package com.splitit.persistence;
 
+import android.os.AsyncTask;
+
 import com.splitit.domain.Purchase;
 
 import org.apache.log4j.Logger;
@@ -13,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-public class PurchaseList {
+public class PurchaseList extends AsyncTask {
 
     DBAccessor dbAccessor;
     static Properties dbProperties = new Properties();
@@ -25,11 +27,19 @@ public class PurchaseList {
             logger.error("FAILED TO OBTAIN DATABASE PROPERTIES");
 
         }
-        dbAccessor = new DBAccessor(dbProperties.getProperty("db.url"), dbProperties.getProperty("db.user"), dbProperties.getProperty("db.key"));
+//        dbAccessor = new DBAccessor(dbProperties.getProperty("db.url"), dbProperties.getProperty("db.user"), dbProperties.getProperty("db.key"));
+        dbAccessor = new DBAccessor("jdbc:mysql://192.168.0.15:3306/purchase_data", "abir", "F0xtrot");
     }
+
+    @Override
+    protected List<Purchase> doInBackground(Object[] objects) {
+        return getPurchaseList();
+    }
+
+
     public Properties loadDBData()throws IOException {
         Properties dbProperties = new Properties();
-        dbProperties.load(new FileInputStream("/Users/abirahammed/Projects/Android Project/SplitIt/app/src/main/res/database.properties"));
+        dbProperties.load(new FileInputStream("C:\\Users\\ahamm\\AndroidStudioProjects\\MyApplication\\group-spliter\\app\\src\\main\\res\\database.properties"));
         return dbProperties;
     }
     public List <Purchase > getPurchaseList(){

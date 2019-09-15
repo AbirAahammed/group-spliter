@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void populateListView() {
         listView =  findViewById(R.id.nameList);
-        purchases = purchaseList.getPurchaseList();
+        purchases = (List<Purchase>) purchaseList.execute(null,null);
         adapter = new PurchaseAdapter(this, purchases);
         listView.setAdapter(adapter);
 //        ArrayAdapter arrayAdapter = new ArrayAdapter(this,);
