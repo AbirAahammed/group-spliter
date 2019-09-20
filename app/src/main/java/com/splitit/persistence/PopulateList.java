@@ -2,8 +2,6 @@ package com.splitit.persistence;
 
 import android.app.Activity;
 import android.os.AsyncTask;
-import android.widget.ExpandableListAdapter;
-import android.widget.ExpandableListView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -25,9 +23,9 @@ public class PopulateList extends AsyncTask<String, Void, List<Purchase>> {
     private static final String user = "abir";
     private static final String pass = "F0xtrot";
     List<Purchase> res = new ArrayList<>();
-    ExpandableListView listView;
+    ListView listView;
     Activity activity;
-    public PopulateList(ExpandableListView listView, Activity activity){
+    public PopulateList(ListView listView, Activity activity){
         this.listView = listView;
         this.activity = activity;
     }
@@ -60,7 +58,7 @@ public class PopulateList extends AsyncTask<String, Void, List<Purchase>> {
 
     @Override
     protected  void onPostExecute(List<Purchase> result) {
-        ExpandableListAdapter adapter = new PurchaseAdapter(activity, result);
+        ListAdapter adapter = new PurchaseAdapter(activity, result);
         listView.setAdapter(adapter);
     }
 }

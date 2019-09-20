@@ -13,8 +13,8 @@
 
 
 
-    <ExpandableListView
+    <ListView
         android:id="@+id/nameList"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" ></ExpandableListView>
+        android:layout_height="match_parent" />
 </RelativeLayout>
