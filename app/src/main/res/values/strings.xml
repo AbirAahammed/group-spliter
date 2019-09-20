@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">SplitIt</string>
+    <string name="todo">TODO</string>
+    <string name="textview">TextView</string>
+    <string name="name">name</string>
+    <string name="price">price</string>
+    <string name="action_settings">Settings</string>
+    <string name="add_new_purchase">Add a Purchase</string>
+    <string name="purchase_name">Name of purchase</string>
+    <string name="value_purchase_name" />
+    <string name="value_price">Price</string>
+    <string name="date">Date</string>
+    <string name="submit">Submit</string>
+    <string name="date_out">TextView</string>
 </resources>
