@@ -46,9 +46,11 @@ public class PurchaseAdapter extends BaseAdapter {
         itemView = (itemView == null) ? inflater.inflate(R.layout.list_item, null): itemView;
         TextView name = itemView.findViewById(R.id.name);
         TextView price = itemView.findViewById(R.id.purchase_price);
+        TextView date = itemView.findViewById(R.id.date_out);
         Purchase purchase = purchases.get(i);
         name.setText(purchase.getPurchaseName());
         price.setText(Integer.toString(purchase.getPrice()));
+        date.setText(purchase.getDate().toString());
         return itemView;
     }
 }

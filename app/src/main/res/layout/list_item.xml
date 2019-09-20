@@ -35,4 +35,16 @@
         android:layout_alignStart="@id/name"
         />
 
+    <TextView
+        android:id="@+id/date_out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/imageView"
+
+        android:layout_marginStart="186dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@id/imageView"
+        android:text="@string/date_out"
+        android:textSize="16sp" />
+
 </RelativeLayout>

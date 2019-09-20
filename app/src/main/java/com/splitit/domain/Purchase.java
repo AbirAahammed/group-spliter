@@ -15,6 +15,11 @@ public class Purchase {
         this.date = date;
     }
 
+    public Purchase(String purchaseName, int price) {
+        this.purchaseName = purchaseName;
+        this.price = price;
+    }
+
     public long getID() {
         return ID;
     }
